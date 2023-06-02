@@ -2,13 +2,22 @@
 async function fetchApiKey() {
     const fileName = "openai-key.txt"
     var key = ""
-    try {
-        key = await fetch(fileName).then(
-            response => response.text())
-    }
-    catch(error) {
-        console.log(`Error reading ${fileName} file:`, error)
-    }
+
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', fileName, true);
+    
+    xhr.onreadystatechange = function() {
+      if (xhr.readyState === 4 && xhr.status === 200) {
+        key = xhr.responseText
+        console.log(key); // Display the file contents
+      }
+    };
+    
+    xhr.onerror = function() {
+      console.log('Error in fetchApiKey:', xhr.statusText);
+    };
+    
+    xhr.send();
     return key
 }
 
@@ -53,7 +62,6 @@ async function fetchChatGptChatCompletions() {
     return data
 }
 
-//const API_KEY = fetchApiKey()     // CORS issue from browser.
-const API_KEY="lalala"
+const API_KEY = fetchApiKey()     // CORS issue from browser.
 fetchChatGptCompletions()
 fetchChatGptChatCompletions()
