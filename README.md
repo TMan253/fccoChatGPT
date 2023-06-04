@@ -5,8 +5,9 @@ Something to burn all of those free credits.
 Initial setup is required.  Create an OpenAI API key, and store it in a file called openai-key.txt.  Create a js-chatgpt-clone/.env file with a variable in it defined as API_KEY=*your API key here*. After initial setup, the tool can be invoked using a web browser's JavaScript console.
 
 ### Usage
-      chmod 755 ./app.sh
+      chmod 755 ./app.sh ./dalleApp.sh
       ./app.sh
+      ./dalleApp.sh
 
 ### Docker installation
 Use the following steps to install Docker for a development environment:
