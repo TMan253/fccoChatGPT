@@ -2,12 +2,20 @@
 Something to burn all of those free credits.
 
 ## How to use the tool
-Initial setup is required.  Create an OpenAI API key, and store it in a file called openai-key.txt.  Create a js-chatgpt-clone/.env file with a variable in it defined as API_KEY=*your API key here*. After initial setup, the tool can be invoked using a web browser's JavaScript console.
+Initial setup is required.  Create an OpenAI API key, and store it in a file called openai-key.txt.  Create a js-chatgpt-clone/.env file with a variable in it defined as API_KEY=*your API key here*.  Copy the js-chatgpt-clone/.env file into react-dalle-clone/.  After initial setup, the tool can be invoked using a web browser's JavaScript console.
 
 ### Usage
       chmod 755 ./app.sh ./dalleApp.sh
       ./app.sh
       ./dalleApp.sh
+      cd js-chatgpt-clone
+      npm run start:backend
+      npm run start:frontend
+      http://localhost:3000
+      cd ../react-dalle-clone
+      npm run start:backend
+      npm run start:frontend
+      http://localhost:3000
 
 ### Docker installation
 Use the following steps to install Docker for a development environment:
